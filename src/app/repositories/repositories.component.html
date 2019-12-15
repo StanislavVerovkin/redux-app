@@ -1,0 +1,3 @@
+<div *ngFor="let r of (repos | async)?.repos">
+  <img [src]="r?.icon_url">
+</div>

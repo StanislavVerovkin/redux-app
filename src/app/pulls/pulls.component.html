@@ -1,0 +1,3 @@
+<div *ngFor="let c of (pulls | async)?.pull">
+  <img [src]="c?.icon_url">
+</div>
