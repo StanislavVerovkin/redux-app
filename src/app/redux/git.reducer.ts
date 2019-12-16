@@ -10,12 +10,16 @@ export function gitReducer(state = initialState, action: GitActions) {
     case GIT_ACTION.GET_REPOS:
       return {
         ...state,
-        repos: [ ...state.repos, action.payload ]
+        repos: action.payload
+      };
+    case GIT_ACTION.LOAD_PULLS:
+      return {
+        ...state
       };
     case GIT_ACTION.GET_PULLS:
       return {
         ...state,
-        pull: [ ...state.pull, action.payload ]
+        pull: action.payload
       };
     default:
       return state;

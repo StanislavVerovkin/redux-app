@@ -7,10 +7,7 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 })
 export class PullsComponent implements OnInit {
 
-  @Input() pulls;
-
-  constructor(
-  ) {
+  constructor() {
   }
 
   ngOnInit() {

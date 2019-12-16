@@ -10,6 +10,8 @@ import { StoreModule } from '@ngrx/store';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { gitReducer } from './redux/git.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { TestEffect } from './redux/test.effect';
 
 const reducers = {
   gitPage: gitReducer
@@ -31,6 +33,7 @@ const reducers = {
         strictStateSerializability: true,
       },
     }),
+    EffectsModule.forRoot([ TestEffect ]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
