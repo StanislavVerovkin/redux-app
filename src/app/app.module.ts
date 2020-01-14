@@ -12,6 +12,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { gitReducer } from './redux/git.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { TestEffect } from './redux/test.effect';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule, MatSelectModule } from '@angular/material';
 
 const reducers = {
   gitPage: gitReducer
@@ -25,6 +28,10 @@ const reducers = {
   ],
   imports: [
     BrowserModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, {
@@ -35,6 +42,7 @@ const reducers = {
     }),
     EffectsModule.forRoot([ TestEffect ]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]

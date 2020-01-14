@@ -30,5 +30,4 @@ export class GetRepos implements Action {
 
 }
 
-
 export type GitActions = GetPulls | GetRepos | LoadPulls;
